@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 1200 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="arcPath" d="M 200,200 A 500,500 0 0 1 1000,200" />
+  </defs>
+  <text fill="black" font-size="124" font-family="Georgia, serif" text-anchor="middle" dominant-baseline="hanging">
+    <textPath href="#arcPath" startOffset="50%">Royal Squares</textPath>
+  </text>
+</svg>

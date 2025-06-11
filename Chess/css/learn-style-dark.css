@@ -1,0 +1,74 @@
+/* Sekcja Learn – dark mode */
+.learn-content {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 1000px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.learn-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.learn-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Karta tematyczna */
+.card {
+    background-color: #252525;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #f5f5f5;
+}
+
+.card p,
+.card ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.card ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Ikony figur (SVG) */
+.piece-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+}

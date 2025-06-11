@@ -1,0 +1,76 @@
+#sidebar-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 140px;
+    background: #f3ede3;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+#sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#sidebar-nav li.spacer {
+    flex-grow: 1;
+}
+
+#sidebar-nav .nav-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: none;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-radius: 8px;
+}
+
+#sidebar-nav .nav-btn:hover {
+    background: #eae2d6;
+}
+
+#sidebar-nav .material-icons {
+    font-size: 24px;
+}
+
+#sidebar-nav .label {
+    font-size: 0.95em;
+    color: #444;
+    white-space: nowrap;
+}
+
+#themeToggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: none;
+    color: #1e1e1e;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+#themeToggle:hover {
+    background: #eae2d6;
+}

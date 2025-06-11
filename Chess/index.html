@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Learn Chess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="themeStylesheet" rel="stylesheet" href="css/style-dark.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+<nav id="sidebar-nav">
+    <ul>
+        <li><button class="nav-btn" id="homeBtn"><span class="material-icons">home</span><span class="label">Home</span></button></li>
+        <li><button class="nav-btn" id="restartBtn"><span class="material-icons">restart_alt</span><span class="label">Restart</span></button></li>
+        <li><button class="nav-btn"><span class="material-icons">sports_esports</span><span class="label">Game Mode</span></button></li>
+        <li><button class="nav-btn" id="learnBtn"><span class="material-icons">menu_book</span><span class="label">Learn</span></button></li>
+        <li><button class="nav-btn"><span class="material-icons">help</span><span class="label">Help</span></button></li>
+        <li class="spacer"></li>
+        <li><button class="nav-btn" id="themeToggle">
+            <span class="material-icons" id="themeIcon">dark_mode</span>
+            <span class="label" id="themeLabel">Dark Mode</span>
+        </button></li>
+    </ul>
+</nav>
+
+
+<div id="wrapper">
+    <div class="game-panel">
+        <div class="top-bar">
+            <div class="captured-group">
+                <div id="capturedWhite" class="captured-pieces"></div>
+            </div>
+            <div class="timer" id="blackTimer">⏱ 01:00</div>
+        </div>
+
+        <div id="chessboard"></div>
+
+        <div class="bottom-bar">
+            <div class="captured-group">
+                <div id="capturedBlack" class="captured-pieces"></div>
+            </div>
+            <div class="timer" id="whiteTimer">⏱ 00:00</div>
+        </div>
+    </div>
+
+    <div id="sidebar">
+        <div id="moveHistory">
+            <strong>Historia ruchów</strong>
+            <ul id="historyList"></ul>
+            <button id="exportBtn"><span class="material-icons">save</span> Zapisz partię</button>
+        </div>
+
+    </div>
+</div>
+<div id="message"></div>
+<script src="theme.js"></script>
+<script type="module" src="app.js"></script>
+<script src="menuNav.js"></script>
+<script src="js/export.js"></script>
+</body>
+</html>

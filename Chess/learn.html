@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn Chess</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link id="themeStylesheet" rel="stylesheet" href="css/sidebar-nav-dark.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<nav id="sidebar-nav">
+  <ul>
+    <li><button class="nav-btn" id="homeBtn"><span class="material-icons">home</span><span class="label">Home</span></button></li>
+    <li><button class="nav-btn" id="restartBtn"><span class="material-icons">restart_alt</span><span class="label">Restart</span></button></li>
+    <li><button class="nav-btn"><span class="material-icons">sports_esports</span><span class="label">Game Mode</span></button></li>
+    <li><button class="nav-btn" id="learnBtn"><span class="material-icons">menu_book</span><span class="label">Learn</span></button></li>
+    <li><button class="nav-btn"><span class="material-icons">help</span><span class="label">Help</span></button></li>
+    <li class="spacer"></li>
+    <li><button class="nav-btn" id="themeToggle">
+      <span class="material-icons" id="themeIcon">dark_mode</span>
+      <span class="label" id="themeLabel">Dark Mode</span>
+    </button></li>
+  </ul>
+</nav>
+
+<main id="wrapper">
+  <section class="learn-content">
+    <h1>Nauka gry w szachy</h1>
+    <p>Poznaj podstawowe zasady, ruchy figur i strategie otwarć.</p>
+
+    <div class="learn-grid">
+      <div class="card">
+        <h2>Ruchy figur</h2>
+        <p>Każda figura ma swój unikalny sposób poruszania się:</p>
+        <ul class="piece-list">
+          <li>
+            <img class="piece-icon"
+                 src="pieces/king_black.svg"
+                 data-light="pieces/king_black.svg"
+                 data-dark="pieces/king_white.svg"
+                 alt="Król">
+            <strong>Król</strong> – o jedno pole w dowolnym kierunku.
+          </li>
+
+          <li>
+            <img class="piece-icon"
+                 src="pieces/queen_black.svg"
+                 data-light="pieces/queen_black.svg"
+                 data-dark="pieces/queen_white.svg"
+                 alt="Hetman">
+            <strong>Hetman</strong> – w linii prostej: poziomo, pionowo i na skos.
+          </li>
+
+          <li>
+            <img class="piece-icon"
+                 src="pieces/rook_black.svg"
+                 data-light="pieces/rook_black.svg"
+                 data-dark="pieces/rook_white.svg"
+                 alt="Wieża">
+            <strong>Wieża</strong> – tylko poziomo i pionowo.
+          </li>
+
+          <li>
+            <img class="piece-icon"
+                 src="pieces/bishop_black.svg"
+                 data-light="pieces/bishop_black.svg"
+                 data-dark="pieces/bishop_white.svg"
+                 alt="Goniec">
+            <strong>Goniec</strong> – tylko po skosie, ale o dowolną liczbę pól.
+          </li>
+
+          <li>
+            <img class="piece-icon"
+                 src="pieces/knight_black.svg"
+                 data-light="pieces/knight_black.svg"
+                 data-dark="pieces/knight_white.svg"
+                 alt="Skoczek">
+            <strong>Skoczek</strong> – w kształcie litery „L”, może przeskakiwać inne figury.
+          </li>
+
+          <li>
+            <img class="piece-icon"
+                 src="pieces/pawn_black.svg"
+                 data-light="pieces/pawn_black.svg"
+                 data-dark="pieces/pawn_white.svg"
+                 alt="Pionek">
+            <strong>Pionek</strong> – jedno pole do przodu (lub dwa w pierwszym ruchu), bije po skosie.
+          </li>
+        </ul>
+        <p>Dodatkowe zasady: roszada, promocja pionka, bicie w przelocie.</p>
+      </div>
+
+      <div class="card">
+        <h2>Szach i mat</h2>
+        <p><strong>Szach</strong> to sytuacja, gdy król jest atakowany i gracz musi się bronić.</p>
+        <p><strong>Mat</strong> to koniec gry – król jest zaatakowany i nie może się obronić.</p>
+        <p><strong>Pat</strong> oznacza remis – gracz nie ma legalnych ruchów, ale nie jest w szachu.</p>
+        <p>Pamiętaj: nie wolno wykonywać ruchu, który zostawi króla w szachu!</p>
+      </div>
+
+      <div class="card">
+        <h2>Otwarcia</h2>
+        <p>Otwarcie to pierwsze ruchy partii. Ich cel to:</p>
+        <ul>
+          <li>Rozwój figur i kontrola centrum (pola d4, e4, d5, e5).</li>
+          <li>Bezpieczeństwo króla (najczęściej przez roszadę).</li>
+        </ul>
+        <p>Przykłady:</p>
+        <ul>
+          <li><strong>Partia Włoska</strong> – szybki rozwój skoczka i gońca.</li>
+          <li><strong>Obrona Sycylijska</strong> – odpowiedź czarnych na 1. e4 z kontratakiem.</li>
+          <li><strong>Gambit królewski</strong> – poświęcenie pionka w zamian za silny atak.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="theme.js"></script>
+<script src="menuNav.js"></script>
+</body>
+</html>

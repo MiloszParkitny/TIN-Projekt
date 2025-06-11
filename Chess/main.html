@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Royal Squares</title>
+    <link rel="stylesheet" href="css/style-main.css" />
+</head>
+<body>
+<div class="container">
+    <img src="pieces/title-white.svg" alt="Royal Squares Logo" />
+    <p class="subtitle">Choose game time</p>
+    <div class="time-options">
+        <button class="time-btn" data-time="1">1 minute</button>
+        <button class="time-btn" data-time="3">3 minutes</button>
+        <button class="time-btn" data-time="5">5 minutes</button>
+        <button class="time-btn" data-time="10">10 minutes</button>
+        <button class="time-btn" data-time="15">15 minutes</button>
+    </div>
+
+    <button class="play-btn">PLAY</button>
+
+    <script>
+        let selectedTime = null;
+
+        document.querySelectorAll('.time-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+                selectedTime = parseInt(btn.dataset.time);
+            });
+        });
+
+        document.querySelector('.play-btn').addEventListener('click', () => {
+            if (selectedTime) {
+                localStorage.setItem('selectedTime', selectedTime);
+                window.location.href = 'index.html';
+            } else {
+                alert('Please select game time.');
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

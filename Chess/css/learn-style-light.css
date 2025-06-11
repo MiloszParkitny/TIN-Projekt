@@ -1,0 +1,72 @@
+/* Sekcja Learn */
+.learn-content {
+    background: #f3ede3;
+    border: 1px solid #b8b0a2;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 1000px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.learn-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1a1a1d;
+}
+
+.learn-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #fffaf4;
+    border: 1px solid #b8b0a2;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #1a1a1d;
+}
+
+.card p, .card ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #2d2d2d;
+}
+
+.card ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Ikonki figur */
+.piece-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
+}

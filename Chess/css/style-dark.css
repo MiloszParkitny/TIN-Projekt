@@ -1,0 +1,319 @@
+@import "sidebar-nav-dark.css";
+
+body {
+    margin: 0;
+    background-color: #1a1a1d;
+    font-family: 'Segoe UI', sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+#wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.game-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar,
+.bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 640px; /* 8 x 80px */
+    margin: 10px 0;
+}
+
+.captured-group {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    height: 40px;
+    min-width: 150px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.captured-pieces {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.captured-pieces img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    filter: grayscale(100%);
+}
+
+.timer {
+    background-color: #1f1f1f;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin: 10px;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #2e2e2e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.square {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.white {
+    background-color: #3a3f4b;
+}
+
+.black {
+    background-color: #25292e;
+}
+
+.piece {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.square.selected {
+    outline: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.square.highlight::after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.square.highlight-attack::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    border: 2px solid rgba(255, 80, 80, 0.5);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#moveHistory {
+    background: #1c1c1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 16px;
+    width: 200px;
+    height: 640px;
+    overflow-y: auto;
+    font-size: 0.95em;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    margin-top: 25px;
+}
+
+#moveHistory ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#moveHistory li {
+    margin-bottom: 8px;
+    color: #cccccc;
+}
+
+#message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fdd835;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    font-weight: bold;
+}
+
+#exportBtn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 10px 16px;
+    background: #2a2a2a;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    font-size: 0.95em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#exportBtn:hover {
+    background: #333;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+#exportBtn .material-icons {
+    font-size: 20px;
+}
+/* Sekcja Learn – dark mode */
+.learn-content {
+    background: #1f1f1f;
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 1000px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.learn-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.learn-content p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Karta tematyczna */
+.card {
+    background-color: #252525;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #f5f5f5;
+}
+
+.card p,
+.card ul {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.card ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.card li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+/* Ikony figur (SVG) */
+.piece-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+}
+.promotion-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2a2a2a;
+    border: 2px solid #444;
+    padding: 16px 20px;
+    display: flex;
+    gap: 16px;
+    border-radius: 16px;
+    z-index: 9999;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.promotion-choice {
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+    padding: 6px;
+    box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.promotion-choice:hover {
+    transform: scale(1.1);
+    background-color: #333;
+}
+
+
